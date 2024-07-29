@@ -22,13 +22,13 @@ int main()
 
     Seattle* city1 = new Seattle;
     Vancouver* city2 = new Vancouver;
-    Guangzhou* city3 = new Guangzhou;
+    Guangzhou* cityArr1 = new Guangzhou[5];
 
-    printf("Cities online: %d, %d, %d\n", !!city1, !!city2, !!city3);
+    printf("Cities online: %d, %d, %d\n", !!city1, !!city2, !!cityArr1);
 
     ResourceRelease<Seattle*>::release(city1);
     ResourceRelease<Vancouver*>::release(city2);
-    ResourceRelease<Guangzhou*>::release(city3);
+    ResourceRelease<Guangzhou*>::releaseArr(cityArr1);
 
-    printf("Cities online: %d, %d, %d\n", !!city1, !!city2, !!city3);
+    printf("Cities online: %d, %d, %d\n", !!city1, !!city2, !!cityArr1);
 }

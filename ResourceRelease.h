@@ -10,6 +10,7 @@ class ResourceRelease
 {
 public:
     static void release(T& resource);
+    static void releaseArr(T& resource);
 };
 
 template <typename T>
@@ -18,6 +19,16 @@ void ResourceRelease<T>::release(T& resource)
     if (resource)
     {
         delete resource;
+        resource = nullptr;
+    }
+}
+
+template <typename T>
+void ResourceRelease<T>::releaseArr(T& resource)
+{
+    if (resource)
+    {
+        delete [] resource;
         resource = nullptr;
     }
 }
