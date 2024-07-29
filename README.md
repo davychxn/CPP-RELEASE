@@ -23,6 +23,8 @@ if (cities)
 
 With CPP-RELEASE helper, it can be as elegant as this:
 ```cpp
+#include "ResourceRelease.h"
+
 ResourceRelease<Vancouver*>::release(city);
 // And
 ResourceRelease<Guangzhou*>::releaseArr(cities);
